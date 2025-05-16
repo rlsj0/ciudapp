@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7kIapjkLRQlNgZJsbaZiBfiAdjxotNz3iRb2fY37CKT3Wcpa/sG0QOCQgHm0J9oVeK+Rb2U1ivZRlgcw5VySOg==",
+  "success": true,
+  "projectFilePath": "/home/user/proyectos/ciudapp/backend/CiudApp.Models/CiudApp.Models.csproj",
+  "expectedPackageFiles": [
+    "/home/user/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
