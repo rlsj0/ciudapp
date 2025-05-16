@@ -6,5 +6,4 @@ public class CiudadCreateDto
     public string Pais { get; set; }
     public int Poblacion { get; set; }
     public bool SoftDelete { get; set; }
-    public DateTime FechaRegistro { get; set; }
 }
