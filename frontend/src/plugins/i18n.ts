@@ -37,8 +37,11 @@ const messages = {
         koCity: 'Error al registrar la ciudad',
         koConection: 'Error en la conexión con el servidor',
         okDeleteCity: 'Ciudad eliminada',
-        koDeleteCity: 'Error al eliminar la ciudad'
-
+        koDeleteCity: 'Error al eliminar la ciudad',
+        okResena: 'Reseña registrada',
+        koResena: 'Error al registrar reseña',
+        okDeleteResena: 'Reseña eliminada',
+        koDeleteResena: 'Error al eliminar reseña',
     }
     ,
     en: {
@@ -76,7 +79,11 @@ const messages = {
         koCity: 'Error registering the city',
         koConection: 'Error in the server connection', 
         okDeleteCity: 'City deleted',
-        koDeleteCity: 'Error deleting the city'
+        koDeleteCity: 'Error deleting the city',
+        okResena: 'Review submitted',
+        koResena: 'Error submitting review',
+        okDeleteResena: 'Review deleted',
+        koDeleteResena: 'Error deleting review',
     }
 }
 
