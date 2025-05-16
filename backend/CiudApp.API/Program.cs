@@ -1,4 +1,6 @@
-using Microsof.EntityFrameworkCore;
+using CiudApp.Business;
+using CiudApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
