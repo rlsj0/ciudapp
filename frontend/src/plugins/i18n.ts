@@ -1,0 +1,95 @@
+import { createI18n } from 'vue-i18n';
+
+
+const messages = {
+    es: {
+        hello: 'hola mundo',
+        user: 'Usuario | Usuarios',
+        subtitle: 'Explora opiniones auténticas y planifica tu próxima aventura fácilmente',
+        name: 'Nombre',
+        si: 'Sí',
+        no: 'No',
+        confirm: 'Confirmar',
+        clean: 'Limpiar',
+        actions: 'Acciones',
+        date: 'Fecha',
+        surname: 'Apellido',
+        email: 'Correo',
+        id: 'ID', 
+        back: 'Atrás',
+        slogan: 'Descubre. Comparte. Vive cada ciudad',
+        closingSession: 'Cerrando sesión',
+        profile: 'Perfil',
+        profileUser: 'Perfil de usuario',
+        login: "Iniciar sesión",
+        closeSession: 'Cerrar Sessión',
+        password: 'Contraseña',
+        noAccount: '¿No tienes cuenta?',
+        registerHere: 'Regístrate aquí',
+        okLogin: 'Inicio de sesión correcto',
+        koLogin: 'Usuario o contraseña incorrectos',
+        errorLogin: 'Error al intentar iniciar sesión',
+        duplicated: 'Este correo ya está registrado',
+        cancel: 'Cancelar',
+        saveChanges: 'Guardar cambios',
+        userData: 'Datos personales',
+    }
+    ,
+    en: {
+        hello: 'hello world',
+        user: 'User | Users',
+        subtitle: 'Explore authentic reviews and plan your next adventure easily',
+        name: 'Name',
+        si: 'Yes',
+        no: 'No',
+        confirm: 'Confirm',
+        clean: 'Clean',
+        actions: 'Actions',
+        date: 'Date',
+        surname: 'Surname',
+        email: 'Email',
+        id: 'ID',
+        back: 'Back',
+        slogan: 'Discover. Share. Live every city',
+        closingSession: 'Logging out',
+        profile: 'Profile',
+        profileUser: 'User profile',
+        login: 'Log in',
+        closeSession: 'Log out',
+        password: 'Password',
+        noAccount: "Don't have an account?",
+        registerHere: 'Register here',
+        okLogin: 'Login successful',
+        koLogin: 'Incorrect username or password',
+        errorLogin: 'Error trying to log in',
+        duplicated: 'This email is already registered',
+        cancel: 'Cancel',
+        saveChanges: 'Save changes',
+        userData: 'Personal data',
+    }
+}
+
+type MessageSchema = typeof messages['es']
+
+const i18n = createI18n<[MessageSchema], 'es' | 'en'>({
+    legacy: false,
+    locale: 'es',
+    fallbackLocale: 'en',
+    messages
+  })
+
+
+const changeLanguage = (language: 'es' | 'en' ) => {
+    i18n.global.locale = language
+    localStorage.setItem('language', language)
+}
+  
+
+const savedLanguage = localStorage.getItem('language')
+    if (savedLanguage) {
+    i18n.global.locale = savedLanguage as 'es' | 'en'
+}
+
+
+export default i18n
+export { changeLanguage }
