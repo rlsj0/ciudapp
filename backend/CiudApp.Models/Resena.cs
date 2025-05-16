@@ -20,7 +20,5 @@ public class Resena
     public DateTime Fecha { get; set; }
     public bool Recomendacion { get; set; }
 
-    public List<Resena>? Resenas { get; set; }
-
     public Resena() { }
 }
