@@ -1,3 +1,5 @@
+using CiudApp.Business;
+using CiudApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CiudApp.API.Controllers;
@@ -64,7 +66,5 @@ public class ResenaController : ControllerBase
             return NotFound(ex.Message);
         }
     }
-
-
 }
 

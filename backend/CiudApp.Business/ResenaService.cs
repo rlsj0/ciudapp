@@ -31,7 +31,7 @@ public class ResenaService : IResenaService
             Fecha = DateTime.Now,
             Calificacion = resena.Calificacion,
             Recomendacion = resena.Recomendacion
-        }
+        };
         _resenaRepository.AddResena(nuevaResena);
         _resenaRepository.SaveChanges();
         return nuevaResena;
