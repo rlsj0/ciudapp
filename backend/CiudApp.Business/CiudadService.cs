@@ -86,7 +86,6 @@ public class CiudadService : ICiudadService
         ciudad.Pais = crearCiudad.Pais;
         ciudad.Poblacion = crearCiudad.Poblacion;
         ciudad.SoftDelete = crearCiudad.SoftDelete;
-        ciudad.FechaRegistro = crearCiudad.FechaRegistro;
 
         _repository.SaveChanges();
     }
