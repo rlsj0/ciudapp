@@ -10,7 +10,7 @@ public class CiudAppContext : DbContext
     }
 
     public DbSet<Ciudad> Ciudades { get; set; }
-    // public DbSet<Resena> Resenas { get; set; }
+    public DbSet<Resena> Resenas { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
