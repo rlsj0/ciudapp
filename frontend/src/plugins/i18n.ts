@@ -33,6 +33,12 @@ const messages = {
         cancel: 'Cancelar',
         saveChanges: 'Guardar cambios',
         userData: 'Datos personales',
+        okCity: 'Ciudad registrada',
+        koCity: 'Error al registrar la ciudad',
+        koConection: 'Error en la conexión con el servidor',
+        okDeleteCity: 'Ciudad eliminada',
+        koDeleteCity: 'Error al eliminar la ciudad'
+
     }
     ,
     en: {
@@ -66,6 +72,11 @@ const messages = {
         cancel: 'Cancel',
         saveChanges: 'Save changes',
         userData: 'Personal data',
+        okCity: 'City registered',
+        koCity: 'Error registering the city',
+        koConection: 'Error in the server connection', 
+        okDeleteCity: 'City deleted',
+        koDeleteCity: 'Error deleting the city'
     }
 }
 
