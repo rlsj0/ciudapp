@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddScoped<ICiudadService, CiudadService>();
-builder.Services.AddScoped<ICiudadRepository, CiudadRepository>();
+builder.Services.AddScoped<IResenaService, ResenaService>();
 
 // Aqui el tema de la BBDD
 var connectionString = builder.Configuration.GetConnectionString("ServerDB_localhost");
