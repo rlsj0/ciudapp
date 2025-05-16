@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CiudApp.Business\CiudApp.Business.csproj" />
+    <ProjectReference Include="..\CiudApp.Models\CiudApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

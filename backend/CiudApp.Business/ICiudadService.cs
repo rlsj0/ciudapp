@@ -8,7 +8,7 @@ public interface ICiudadService
     public Ciudad CreateCiudad(CiudadCreateDto ciudad);
 
     // Read
-    public IEnumerable<CiudadReadDto> GetAllCiudad();
+    public IEnumerable<CiudadReadDto> GetAllCiudades();
     public CiudadReadDto GetCiudadById(int id);
 
     // Update
