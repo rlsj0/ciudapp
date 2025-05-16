@@ -9,32 +9,31 @@ export const useResenasStore = defineStore('resenas', () => {
 
 
   async function fetchAll(id: number) {
-    if (resenas.length === 0) {
-      try {
-        const response = await fetch('http://localhost:8080/Ciudad/' + id + '/Resena');
-        const data = await response.json();
 
-        const resenasInfo = data.map((c: Resena) => ({
-          id: c.id,
-          cityId: c.cityId,
-          title: c.title,
-          description: c.description,
-          rating: c.rating,
-          dateRegister: c.dateRegister,
-          recomendation: c.recomendation
-        }))
+    try {
+      const response = await fetch('http://localhost:8080/Ciudad/' + id + '/Resena');
+      const data = await response.json();
 
-        resenas.push(...resenasInfo);
-        console.log('Reseñas registradas correctamente');
+      const resenasInfo = data.map((c: any) => ({
+        id: c.id,
+        cityId: c.ciudadId,
+        title: c.titulo,
+        description: c.descripcion,
+        rating: c.calificacion,
+        dateRegister: c.fecha,
+        recomendation: c.recomendacion
+      }))
 
-      } catch (error) {
-        console.log('Error en cargar las reseñas:', error);
-      }
+      resenas.length = 0
+
+      resenas.push(...resenasInfo);
+      console.log('Reseñas registradas correctamente');
+
+    } catch (error) {
+      console.log('Error en cargar las reseñas:', error);
     }
-
   }
-
-
+  
   async function addResena(resena: NewResena) {
 
     try {

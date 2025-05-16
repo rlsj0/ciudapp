@@ -1,10 +1,8 @@
 <template>
     <v-container>
-        <v-row align="center" style="height: 150px" no-gutters>
-            <v-col v-for="n in 3" :key="n">
-                <v-sheet class="pa-2 ma-2">
-                    <AppCard />
-                </v-sheet>
+        <v-row align="center" style="height: 150px;" no-gutters>
+            <v-col v-for="city in store.cities" :key="city.id">
+                <AppCard :city="city" />
             </v-col>
         </v-row>
     </v-container>
@@ -12,13 +10,15 @@
 
 <script setup lang="ts">
 import AppCard from '@/components/AppCard.vue'
+
+import { useCitiesStore } from '@/stores/cityStore.ts'
+
+const store = useCitiesStore()
+
+store.fetchAll()
+
 </script>
 
 <style lang="scss" scoped>
- 
-.v-sheet {
-    background-color: #B1AED1;
-    border-radius: 20px;
-}
 
 </style>
