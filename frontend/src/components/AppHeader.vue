@@ -30,7 +30,7 @@
     </div>
 
     <!-- Acciones -->
-    <!--<v-select
+    <v-select
         v-model="selectedLanguage"
         :items="languages"
         item-title="label"
@@ -38,9 +38,9 @@
         return-object
         density="compact"
         hide-details
-        class="mx-2 select-idiom"
+        class="mx-2 header__idioms"
         @update:modelValue="changeLanguage"
-      />-->
+      />
     <v-btn icon aria-label="Buscar">
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
@@ -94,13 +94,28 @@
 </template>
 
 <script setup lang="ts">
-    import { computed, ref } from 'vue';
-    import { useRouter } from 'vue-router'
-    import type { NavItems } from '@/types/nav'
+  import { computed, ref } from 'vue';
+  import { useRouter } from 'vue-router'
+  import type { NavItems } from '@/types/nav'
+  import { useI18n } from 'vue-i18n'
 
+  const { locale } = useI18n()
+  const { t } = useI18n()
+  const router = useRouter()
+  const drawer = ref(<boolean>false)
 
-    const router = useRouter()
-    const drawer = ref(<boolean>false)
+  const languages = [
+    { code: 'es', label: '🇪🇸 ' },
+    { code: 'en', label: '🇬🇧' },
+  ]
+
+  const selectedLanguage = ref(languages.find(lang => lang.code === locale.value))
+
+  const changeLanguage = (language: { code: string; label: string }) => {
+    locale.value = language.code
+  }
+
+  
 
 
   const items = computed<NavItems[]>( () => {
@@ -140,9 +155,14 @@
     background-color: $color-primary;
     color: $color-bg;
 
+    &__idioms {
+      max-width: 80px;
+    }
+
     &__button {
       color: $color-bg;
     }
+
   }
 
 </style>
