@@ -23,7 +23,7 @@ public class CiudadRepository : ICiudadRepository
         {
             throw new KeyNotFoundException("Ciudad no encontrada");
         }
-        _context.Ciudad.Remove(ciudad);
+        _context.Ciudades.Remove(ciudad);
         SaveChanges();
     }
 

@@ -68,7 +68,7 @@ public class CiudadService : ICiudadService
             Poblacion = c.Poblacion,
             SoftDelete = c.SoftDelete,
             FechaRegistro = c.FechaRegistro
-        }
+        };
 
         return ciudadDto;
     }
