@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddScoped<ICiudadService, CiudadService>();
-// builder.Services.AddScoped<ICiudadRepository, CiudadRepository>();
+builder.Services.AddScoped<ICiudadRepository, CiudadRepository>();
 
 // Aqui el tema de la BBDD
 var connectionString = builder.Configuration.GetConnectionString("ServerDB_localhost");
@@ -18,7 +18,7 @@ builder.Services.AddDbContext<CiudAppContext>(options =>
 
 
 builder.Services.AddScoped<ICiudadRepository, CiudadRepository>();
-// builder.Services.AddScoped<IResenaRepository, ResenaRepository>();
+builder.Services.AddScoped<IResenaRepository, ResenaRepository>();
 // Add Controllers
 builder.Services.AddControllers();
 

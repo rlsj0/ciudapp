@@ -39,10 +39,10 @@ public class ResenaService : IResenaService
 
     public void DeleteResena(int id)
     {
-        var ciudad = _ciudadRepository.GetCiudad(id);
-        if (ciudad == null)
+        var resena = _resenaRepository.GetResena(id);
+        if (resena == null)
         {
-            throw new KeyNotFoundException($"No hay ciudades con el id {id}");
+            throw new KeyNotFoundException($"No hay reseñas con el id {id}");
         }
         _resenaRepository.DeleteResena(id);
         _resenaRepository.SaveChanges();
