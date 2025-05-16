@@ -12,5 +12,7 @@ public class Ciudad
     public bool SoftDelete { get; set; }
     public DateTime FechaRegistro { get; set; }
 
+    public List<Resena>? Resenas { get; set; }
+
     public Ciudad() { }
 }
