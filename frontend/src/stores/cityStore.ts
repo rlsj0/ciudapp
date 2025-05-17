@@ -15,13 +15,15 @@ export const useCitiesStore = defineStore('cities', () => {
         const response = await fetch('http://localhost:8080/Ciudad');
         const data = await response.json();
 
-        const citiesInfo = data.map((c: City) => ({
+
+        //Cambie el mapeo de ingles a español
+        const citiesInfo = data.map((c:any) => ({
           id: c.id,
-          name: c.name,
-          country: c.country,
-          population: c.population,
+          name: c.nombre,
+          country: c.pais,
+          population: c.poblacion,
           softDelete: c.softDelete,
-          dateRegister: c.dateRegister
+          dateRegister: c.fechaRegistro
         }))
 
         cities.push(...citiesInfo);

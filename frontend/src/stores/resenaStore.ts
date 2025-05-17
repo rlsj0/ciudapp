@@ -1,39 +1,47 @@
 import type { Resena, NewResena } from "@/types/resena";
+import type { City, NewCity } from "@/types/city";
 import { defineStore } from "pinia";
 import { reactive, ref } from "vue";
 
 export const useResenasStore = defineStore('resenas', () => {
 
   const resenas = reactive(new Array<Resena>())
+  const city = reactive<City>({
+    id: 0,
+    name: '',
+    country: '',
+    population: 0,
+    softDelete: false,
+    dateRegister: new Date()
+  })
   const isLoaded = ref(false)
 
 
   async function fetchAll(id: number) {
-    if (resenas.length === 0) {
-      try {
-        const response = await fetch('http://localhost:8080/Ciudad/' + id + '/Resena');
-        const data = await response.json();
 
-        const resenasInfo = data.map((c: Resena) => ({
-          id: c.id,
-          cityId: c.cityId,
-          title: c.title,
-          description: c.description,
-          rating: c.rating,
-          dateRegister: c.dateRegister,
-          recomendation: c.recomendation
-        }))
+    try {
+      const response = await fetch('http://localhost:8080/Ciudad/' + id + '/Resena');
+      const data = await response.json();
 
-        resenas.push(...resenasInfo);
-        console.log('Reseñas registradas correctamente');
+      const resenasInfo = data.map((c: any) => ({
+        id: c.id,
+        cityId: c.ciudadId,
+        title: c.titulo,
+        description: c.descripcion,
+        rating: c.calificacion,
+        dateRegister: c.fecha,
+        recomendation: c.recomendacion
+      }))
 
-      } catch (error) {
-        console.log('Error en cargar las reseñas:', error);
-      }
+      resenas.length = 0
+
+      resenas.push(...resenasInfo);
+      console.log('Reseñas registradas correctamente');
+
+    } catch (error) {
+      console.log('Error en cargar las reseñas:', error);
     }
-
   }
-
 
   async function addResena(resena: NewResena) {
 
@@ -88,10 +96,27 @@ export const useResenasStore = defineStore('resenas', () => {
     }
   }
 
+  async function fetchCity(id: number) {
 
+    try {
+      const response = await fetch('http://localhost:8080/Ciudad/' + id);
+      const data = await response.json();
 
+      console.log(data)
+      city.id = data.id;
+      city.name = data.nombre;
+      city.country = data.pais;
+      city.population = data.poblacion;
+      city.softDelete = data.softDelete;
+      city.dateRegister = data.fechaRegistro;
+      console.log('Ciudad obtenida correctamente');
+
+    } catch (error) {
+      console.log('Error en cargar la Ciudad:', error);
+    }
+  }
   return {
-    resenas, fetchAll, addResena, deleteResena, isLoaded
+    resenas, fetchAll, addResena, deleteResena, isLoaded, fetchCity
   }
 
 })

@@ -11,7 +11,7 @@ import Footer from './components/AppFooter.vue'
     <v-main class="flex-grow-1 d-flex flex-column fill-height">
       <RouterView class="vh100"  />
     </v-main>
-    <Footer class="shrink-0"/>
+<!--     <Footer class="shrink-0"/> -->
   </v-app>
 </template>
 

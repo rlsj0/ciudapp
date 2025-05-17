@@ -1,23 +1,37 @@
+<script setup lang="ts">
+import { useRouter } from "vue-router"
+import type { City, NewCity } from "@/types/city";
+
+const router = useRouter()
+
+const props = defineProps<{
+    city: City
+}>()
+
+function goReviews(id: number) {
+    router.push(`/cities/${id}`)
+
+}
+
+
+</script>
+
 <template>
-    <v-card class="mx-auto" max-width="400">
-        <v-card-title>Ciudad</v-card-title>
-        <v-card-subtitle class="pt-4">País</v-card-subtitle>
+    <v-card class="mx-auto" v-on:click="goReviews(props.city.id)">
+        <v-card-title>{{ props.city.name }}</v-card-title>
+        <v-card-subtitle class="pt-4">{{ props.city.country }}</v-card-subtitle>
 
         <div class="card-info pa-4">
-            <span class="text-left">Población</span>
-            <span class="text-right">Fecha</span>
+            <span class="text-left">{{ props.city.population }}</span>
+            <span class="text-right">{{ props.city.dateRegister }}</span>
         </div>
     </v-card>
 </template>
 
-
-<script setup lang="ts">
-</script>
-
 <style lang="scss" scoped>
 .v-card {
     background-color: $color-primary;
-    height: 100%;
+    width: 300px;
     border-radius: 20px;
 
     &:hover {
