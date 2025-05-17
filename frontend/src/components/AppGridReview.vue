@@ -11,16 +11,9 @@
 <script setup lang="ts">
 
 import AppCardReview from '@/components/AppCardReview.vue'
-
 import { useResenasStore } from '@/stores/resenaStore.ts'
-import { useRoute } from 'vue-router'
 
-const route = useRoute()
 const store = useResenasStore()
-
-const id = route.params.id
-
-store.fetchAll(id)
 
 </script>
 

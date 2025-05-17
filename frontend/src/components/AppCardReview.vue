@@ -15,7 +15,7 @@
         </v-card-text>
 
         <v-card-text class="text-caption text-disabled">
-            Fecha: {{ formatDate(props.review.dateRegister) }}
+            Fecha: {{ formatDate(props.review.dateRegister.toDateString()) }}
         </v-card-text>
 
         <v-btn icon="mdi-close-thick" size="x-small" color="red" v-on:click="deleteReview(props.review.id)"> </v-btn>

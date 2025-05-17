@@ -23,7 +23,7 @@ function goReviews(id: number) {
 
         <div class="card-info pa-4">
             <span class="text-left">{{ props.city.population }}</span>
-            <span class="text-right">{{ props.city.dateRegister.split('T')[0] }}</span>
+            <span class="text-right">{{ props.city.dateRegister }}</span>
         </div>
     </v-card>
 </template>

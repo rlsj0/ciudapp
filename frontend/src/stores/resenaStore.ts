@@ -1,10 +1,19 @@
 import type { Resena, NewResena } from "@/types/resena";
+import type { City, NewCity } from "@/types/city";
 import { defineStore } from "pinia";
 import { reactive, ref } from "vue";
 
 export const useResenasStore = defineStore('resenas', () => {
 
   const resenas = reactive(new Array<Resena>())
+  const city = reactive<City>({
+    id: 0,
+    name: '',
+    country: '',
+    population: 0,
+    softDelete: false,
+    dateRegister: new Date()
+  })
   const isLoaded = ref(false)
 
 
@@ -33,7 +42,7 @@ export const useResenasStore = defineStore('resenas', () => {
       console.log('Error en cargar las reseñas:', error);
     }
   }
-  
+
   async function addResena(resena: NewResena) {
 
     try {
@@ -87,10 +96,27 @@ export const useResenasStore = defineStore('resenas', () => {
     }
   }
 
+  async function fetchCity(id: number) {
 
+    try {
+      const response = await fetch('http://localhost:8080/Ciudad/' + id);
+      const data = await response.json();
 
+      console.log(data)
+      city.id = data.id;
+      city.name = data.nombre;
+      city.country = data.pais;
+      city.population = data.poblacion;
+      city.softDelete = data.softDelete;
+      city.dateRegister = data.fechaRegistro;
+      console.log('Ciudad obtenida correctamente');
+
+    } catch (error) {
+      console.log('Error en cargar la Ciudad:', error);
+    }
+  }
   return {
-    resenas, fetchAll, addResena, deleteResena, isLoaded
+    resenas, fetchAll, addResena, deleteResena, isLoaded, fetchCity
   }
 
 })
