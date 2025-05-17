@@ -10,3 +10,10 @@ export interface City extends NewCity {
     id: number, 
     dateRegister: Date
 }
+
+
+
+export interface CityResult {
+    success: boolean;
+    message: string;
+}

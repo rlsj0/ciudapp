@@ -1,15 +1,21 @@
 import { extractColor } from "vuetify/components/VColorPicker/util"
 
 export interface NewResena {
-    cityId: string, 
+    cityId: number, 
     title: string, 
     description: string,
     rating: number, 
-    dateRegister: Date, 
     recomendation: boolean
 }
 
 
 export interface Resena extends NewResena {
-    id: number
+    id: number,
+    dateRegister: Date, 
+}
+
+
+export interface ResenaResult {
+    success: boolean;
+    message: string;
 }
