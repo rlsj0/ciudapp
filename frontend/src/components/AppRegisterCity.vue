@@ -86,10 +86,10 @@
         }
 
         const newCity = buildNewCity()
-
+        console.log(newCity);
         try {
 
-            if (isDuplicateCity(newCity.name)) {
+            if (isDuplicateCity(newCity.nombre)) {
                 toast(t('duplicated'), { 
                     type: "error", 
                     onClose: () => {
@@ -123,16 +123,16 @@
 
     function buildNewCity(): NewCity {
         return {
-            name: state.name,
-            country: state.country,
-            population: state.population,
+            nombre: state.name,
+            pais: state.country,
+            poblacion: state.population,
             softDelete: state.softDelete
         }   
     }
 
     
     function isDuplicateCity(name: string): boolean {
-        return store.cities.some(city => city.name === name);
+        return store.cities.some(city => city.nombre === name);
     }
 </script>
 
