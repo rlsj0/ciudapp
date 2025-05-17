@@ -9,10 +9,10 @@ WORKDIR /app
 COPY . ./
 
 # Dependencias
-RUN dotnet restore backend/CiudApp.API/CiudApp.API.csproj
+RUN dotnet restore CiudApp.API/CiudApp.API.csproj
 # Compilamos
 # WORKDIR /app/API
-RUN dotnet publish backend/CiudApp.API/CiudApp.API.csproj -c Release -o /app/out
+RUN dotnet publish CiudApp.API/CiudApp.API.csproj -c Release -o /app/out
 
 # Imagen del runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
