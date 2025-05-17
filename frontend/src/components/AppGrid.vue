@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="mt-10">
         <v-row align="center" style="height: 150px;" no-gutters>
             <v-col v-for="city in store.cities" :key="city.id">
                 <AppCard :city="city" />

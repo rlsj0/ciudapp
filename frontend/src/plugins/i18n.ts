@@ -47,7 +47,8 @@ const messages = {
         title: 'Título',
         description: 'Descripción',
         rating: 'Puntuación',
-        isRecomended: 'Recomendarías esta ciudad a familiares y amigos?'
+        isRecomended: 'Recomendarías esta ciudad a familiares y amigos?',
+        viewCities: 'Ciudades',
     }
     ,
     en: {
@@ -95,7 +96,8 @@ const messages = {
         title: 'Title',
         description: 'Description',
         rating: 'Rating',
-        isRecomended: 'Would you recommend this city to family and friends?'
+        isRecomended: 'Would you recommend this city to family and friends?',
+        viewCities: 'Cities',
     }
 }
 
