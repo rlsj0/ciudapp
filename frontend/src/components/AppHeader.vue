@@ -121,7 +121,7 @@
   const items = computed<NavItems[]>( () => {
     return [
       { title: 'Home', to: '/', icon: 'mdi-home' },
-      { title: 'Añadir ciudad', to: { name: 'Registro', params: { tipo: 'city' } }, icon: 'mdi-plus-thick' },
+      { title: t('addCity'), to: { name: 'Registro', params: { tipo: 'city' } }, icon: 'mdi-plus-thick' },
 
       //TODO usuario login
       /*store.isAuthenticated

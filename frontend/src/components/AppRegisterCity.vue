@@ -88,7 +88,7 @@
         console.log(newCity);
         try {
 
-            if (isDuplicateCity(newCity.nombre)) {
+            if (isDuplicateCity(newCity.nombre, newCity.pais)) {
                 toast(t('duplicated'), { 
                     type: "error", 
                     onClose: () => {
@@ -130,8 +130,8 @@
     }
 
     
-    function isDuplicateCity(nombre: string): boolean {
-        return store.cities.some(city => city.nombre === nombre);
+    function isDuplicateCity(nombre: string, pais: string): boolean {
+        return store.cities.some(city => city.nombre === nombre && city.pais === pais);
     }
 
 

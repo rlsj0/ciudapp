@@ -25,12 +25,12 @@ export const useResenasStore = defineStore('resenas', () => {
 
       const resenasInfo = data.map((c: any) => ({
         id: c.id,
-        cityId: c.ciudadId,
-        title: c.titulo,
-        description: c.descripcion,
-        rating: c.calificacion,
-        dateRegister: c.fecha,
-        recomendation: c.recomendacion
+        ciudadId: c.ciudadId,
+        titulo: c.titulo,
+        descripcion: c.descripcion,
+        calificacion: c.calificacion,
+        fecha: c.fecha,
+        recomendacion: c.recomendacion
       }))
 
       resenas.length = 0

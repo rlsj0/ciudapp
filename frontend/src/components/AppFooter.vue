@@ -46,10 +46,6 @@ import { useI18n } from 'vue-i18n';
     .footer {
         background-color: $color-primary;
         color: $color-bg;
-
-        &__icon {
-
-        }
     }
 
 </style>

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router"
-import type { City, NewCity } from "@/types/city";
+import type { City } from "@/types/city";
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n() 
 
 const router = useRouter()
 
@@ -10,20 +13,19 @@ const props = defineProps<{
 
 function goReviews(id: number) {
     router.push(`/cities/${id}`)
-
 }
 
 
 </script>
 
 <template>
-    <v-card class="mx-auto" v-on:click="goReviews(props.city.id)">
+    <v-card class="mx-auto mt-8" v-on:click="goReviews(props.city.id)">
         <v-card-title>{{ props.city.nombre }}</v-card-title>
         <v-card-subtitle class="pt-4">{{ props.city.pais }}</v-card-subtitle>
 
         <div class="card-info pa-4">
-            <span class="text-left">{{ props.city.poblacion }}</span>
-            <span class="text-right">{{ props.city.fechaRegistro }}</span>
+            <span class="text-left">{{ t("population") }} {{ props.city.poblacion }}</span>
+            <!--<span class="text-right">{{ props.city.fechaRegistro }}</span>-->
         </div>
     </v-card>
 </template>

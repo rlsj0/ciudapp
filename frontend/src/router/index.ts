@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Register from '../views/RegisterView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import ReviewView from '@/views/ReviewView.vue'
+import ReviewView from '../views/ReviewView.vue'
 
 import { useCitiesStore } from '@/stores/cityStore';
 import { useResenasStore } from '@/stores/resenaStore'

@@ -49,6 +49,9 @@ const messages = {
         rating: 'Puntuación',
         isRecomended: 'Recomendarías esta ciudad a familiares y amigos?',
         viewCities: 'Ciudades',
+        addCity: 'Añadir ciudad',
+        register: 'Registro',
+        addResena: 'Añadir reseña'
     }
     ,
     en: {
@@ -98,6 +101,9 @@ const messages = {
         rating: 'Rating',
         isRecomended: 'Would you recommend this city to family and friends?',
         viewCities: 'Cities',
+        addCity: 'Add city',
+        register: 'Register',
+        addResena: 'Add review'
     }
 }
 

@@ -1,10 +1,10 @@
 <template>
-    <v-container>
-        <v-row align="center" style="height: 150px;" no-gutters>
-            <v-col v-for="resena in store.resenas" :key="resena.id">
-                  <AppCardReview :review="resena" />
-            </v-col>
-        </v-row>
+    <v-container justify="center">
+            <v-row justify="center" align="start" no-gutters>
+                <v-col  class="d-flex flex-column justify-center align-center"v-for="resena in store.resenas" :key="resena.id">
+                    <AppCardReview :review="resena" />
+                </v-col>
+            </v-row>
     </v-container>
 </template>
 

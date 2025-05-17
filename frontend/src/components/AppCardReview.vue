@@ -1,16 +1,16 @@
 <template>
-    <v-card class="ma-4 pa-4" max-width="500">
-        <v-card-title class="text-h6">
-            {{ props.review.title }} {{ '★'.repeat(props.review.rating) }}
+    <v-card class="card ma-4 pa-4" max-width="500">
+        <v-card-title class="text-h6 card__title">
+            {{ props.review.titulo }} {{ '★'.repeat(props.review.calificacion) }}
         </v-card-title>
 
         <v-card-text class="text-body-1">
-            {{ props.review.description }}
+            {{ props.review.descripcion }}
         </v-card-text>
 
         <v-card-text class="text-body-1">
             ¿Recomendaria esta ciudad a sus amigos o familia?
-            <v-icon icon='mdi-thumb-up' v-if="props.review.recomendation" />
+            <v-icon icon='mdi-thumb-up' v-if="props.review.recomendacion" />
             <v-icon icon='mdi-thumb-down' v-else />
         </v-card-text>
 
@@ -52,9 +52,10 @@ console.log(store.resenas);
 
 
 <style scoped lang="scss">
-.v-card {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
+    .v-card {
+        width: 450px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
 </style>
