@@ -1,0 +1,24 @@
+<template>
+    <v-container>
+        <v-row align="center" style="height: 150px;" no-gutters>
+            <v-col v-for="city in store.cities" :key="city.id">
+                <AppCard :city="city" />
+            </v-col>
+        </v-row>
+    </v-container>
+</template>
+
+<script setup lang="ts">
+import AppCard from '@/components/AppCard.vue'
+
+import { useCitiesStore } from '@/stores/cityStore.ts'
+
+const store = useCitiesStore()
+
+store.fetchAll()
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>
