@@ -42,6 +42,12 @@ const messages = {
         koResena: 'Error al registrar reseña',
         okDeleteResena: 'Reseña eliminada',
         koDeleteResena: 'Error al eliminar reseña',
+        population: 'Población',
+        country: 'País',
+        title: 'Título',
+        description: 'Descripción',
+        rating: 'Puntuación',
+        isRecomended: 'Recomendarías esta ciudad a familiares y amigos?'
     }
     ,
     en: {
@@ -84,6 +90,12 @@ const messages = {
         koResena: 'Error submitting review',
         okDeleteResena: 'Review deleted',
         koDeleteResena: 'Error deleting review',
+        population: 'Population',
+        country: 'Country',
+        title: 'Title',
+        description: 'Description',
+        rating: 'Rating',
+        isRecomended: 'Would you recommend this city to family and friends?'
     }
 }
 
