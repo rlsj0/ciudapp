@@ -121,7 +121,6 @@
   const items = computed<NavItems[]>( () => {
     return [
       { title: 'Home', to: '/', icon: 'mdi-home' },
-      { title: 'Ciudades', to: '/', icon: 'mdi-home' },
       { title: 'Contacto', to: '/', icon: 'mdi-home' },
 
       //TODO usuario login
