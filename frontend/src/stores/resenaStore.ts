@@ -16,7 +16,6 @@ export const useResenasStore = defineStore('resenas', () => {
   })
   const isLoaded = ref(false)
 
-
   async function fetchAll(id: number) {
 
     try {
@@ -116,7 +115,7 @@ export const useResenasStore = defineStore('resenas', () => {
     }
   }
   return {
-    resenas, fetchAll, addResena, deleteResena, isLoaded, fetchCity
+    resenas, city, fetchAll, addResena, deleteResena, isLoaded, fetchCity
   }
 
 })
