@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Register from '../views/RegisterView.vue'
-import RegisterView from '../views/RegisterView.vue'
-import ReviewView from '@/views/ReviewView.vue'
+import ReviewView from '../views/ReviewView.vue'
+
+import { useCitiesStore } from '@/stores/cityStore';
+import { useResenasStore } from '@/stores/resenaStore'
+
 
 
 const router = createRouter({
@@ -15,7 +17,7 @@ const router = createRouter({
     },
     {
       path: '/registro/:tipo',
-      name: 'registro',
+      name: 'Registro',
       component: () => import('@/views/RegisterView.vue')
     },
     {
@@ -24,6 +26,19 @@ const router = createRouter({
       component: ReviewView,
     }
   ],
+})
+
+
+router.beforeEach(async (to, from, next) => {
+  const citiesStore = useCitiesStore()
+  const resenaStore = useResenasStore()
+
+
+  if (!citiesStore.isLoaded) {
+    await citiesStore.fetchAll()
+    console.log('Dato cargado del BeforeEach');
+  }
+  next()
 })
 
 

@@ -1,14 +1,14 @@
 export interface NewCity {
-    name: string, 
-    country: string,
-    population: number, 
+    nombre: string, 
+    pais: string,
+    poblacion: number, 
     softDelete: boolean
 }
 
 
 export interface City extends NewCity {
     id: number, 
-    dateRegister: Date
+    fechaRegistro: Date
 }
 
 

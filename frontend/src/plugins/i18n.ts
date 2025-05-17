@@ -29,7 +29,7 @@ const messages = {
         okLogin: 'Inicio de sesión correcto',
         koLogin: 'Usuario o contraseña incorrectos',
         errorLogin: 'Error al intentar iniciar sesión',
-        duplicated: 'Este correo ya está registrado',
+        duplicated: 'Esta ciudad ya está registrada',
         cancel: 'Cancelar',
         saveChanges: 'Guardar cambios',
         userData: 'Datos personales',
@@ -49,6 +49,9 @@ const messages = {
         rating: 'Puntuación',
         isRecomended: 'Recomendarías esta ciudad a familiares y amigos?',
         viewCities: 'Ciudades',
+        addCity: 'Añadir ciudad',
+        register: 'Registro',
+        addResena: 'Añadir reseña'
     }
     ,
     en: {
@@ -78,7 +81,7 @@ const messages = {
         okLogin: 'Login successful',
         koLogin: 'Incorrect username or password',
         errorLogin: 'Error trying to log in',
-        duplicated: 'This email is already registered',
+        duplicated: 'This city is already registered',
         cancel: 'Cancel',
         saveChanges: 'Save changes',
         userData: 'Personal data',
@@ -98,6 +101,9 @@ const messages = {
         rating: 'Rating',
         isRecomended: 'Would you recommend this city to family and friends?',
         viewCities: 'Cities',
+        addCity: 'Add city',
+        register: 'Register',
+        addResena: 'Add review'
     }
 }
 

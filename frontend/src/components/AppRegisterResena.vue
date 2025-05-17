@@ -23,7 +23,8 @@
                     class="mb-2"
                 ></v-text-field>
             
-                <v-number-field
+                <v-text-field
+                    type="number"
                     v-model="state.rating"
                     :error-messages="v$.rating.$errors.map(e => String(e.$message))"
                     :label="t('rating')"
@@ -33,7 +34,7 @@
                     class="mb-2"
                     :max="5"
                     :min="0"
-                ></v-number-field>
+                ></v-text-field>
 
                 <v-radio-group
                     v-model="state.recomendation"
@@ -107,7 +108,7 @@
                 type: result.success ? 'success' : 'error', 
                 onClose: () => {
                     clear()
-                    if (result.success) { router.push('/');}
+                    if (result.success) { router.push(`/cities/${newResena.ciudadId}`);}
                 },
             });
             
@@ -123,11 +124,11 @@
 
     function buildNewResena(): NewResena {
         return {
-            cityId: 1,
-            title: state.title,
-            description: state.description,
-            rating: state.rating,
-            recomendation: state.recomendation
+            ciudadId: 1,
+            titulo: state.title,
+            descripcion: state.description,
+            calificacion: state.rating,
+            recomendacion: state.recomendation
         }   
     }
 
