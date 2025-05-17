@@ -15,7 +15,7 @@
         </v-card-text>
 
         <v-card-text class="text-caption text-disabled">
-            Fecha: {{ formatDate(props.review.dateRegister.toDateString()) }}
+        <!-- Fecha: {{ formatDate(props.review.dateRegister.toDateString()) }}-->
         </v-card-text>
 
         <v-btn icon="mdi-close-thick" size="x-small" color="red" v-on:click="deleteReview(props.review.id)"> </v-btn>
@@ -27,7 +27,9 @@
 import type { Resena } from '@/types/resena.ts'
 import { useResenasStore } from '@/stores/resenaStore.ts'
 
+
 const store = useResenasStore()
+console.log("resenas" + store.resenas);
 
 const props = defineProps<{
     review: Resena
@@ -43,6 +45,8 @@ function deleteReview(id: number) {
         store.deleteResena(id);
     }
 }
+
+console.log(store.resenas);
 
 </script>
 

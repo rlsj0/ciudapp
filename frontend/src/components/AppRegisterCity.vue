@@ -48,7 +48,7 @@
   </template>
 
 <script setup lang="ts">
-    import { reactive } from 'vue'
+    import { onMounted, reactive } from 'vue'
     import { useVuelidate } from '@vuelidate/core'
     import { required } from '@vuelidate/validators'
     import { initialCityFormState } from '@/types/state.ts';
@@ -74,8 +74,7 @@
 
     const v$ = useVuelidate(rules, state)
     const store = useCitiesStore()
-
-
+    
 
     async function submit () {
         v$.value.$touch()
@@ -131,9 +130,16 @@
     }
 
     
-    function isDuplicateCity(name: string): boolean {
-        return store.cities.some(city => city.nombre === name);
+    function isDuplicateCity(nombre: string): boolean {
+        return store.cities.some(city => city.nombre === nombre);
     }
+
+
+    onMounted(async () => {
+        await store.fetchAll()
+        console.log(store.cities);
+        
+    })
 </script>
 
 <style scoped>

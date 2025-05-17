@@ -4,6 +4,10 @@ import Register from '../views/RegisterView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import ReviewView from '@/views/ReviewView.vue'
 
+import { useCitiesStore } from '@/stores/cityStore';
+import { useResenasStore } from '@/stores/resenaStore'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +28,19 @@ const router = createRouter({
       component: ReviewView,
     }
   ],
+})
+
+
+router.beforeEach(async (to, from, next) => {
+  const citiesStore = useCitiesStore()
+  const resenaStore = useResenasStore()
+
+
+  if (!citiesStore.isLoaded) {
+    await citiesStore.fetchAll()
+    console.log('Dato cargado del BeforeEach');
+  }
+  next()
 })
 
 

@@ -8,11 +8,11 @@ export const useResenasStore = defineStore('resenas', () => {
   const resenas = reactive(new Array<Resena>())
   const city = reactive<City>({
     id: 0,
-    name: '',
-    country: '',
-    population: 0,
+    nombre: '',
+    pais: '',
+    poblacion: 0,
     softDelete: false,
-    dateRegister: new Date()
+    fechaRegistro: new Date()
   })
   const isLoaded = ref(false)
   const url = `${window.location.protocol}//${window.location.hostname}`
@@ -104,11 +104,11 @@ export const useResenasStore = defineStore('resenas', () => {
 
       console.log(data)
       city.id = data.id;
-      city.name = data.nombre;
-      city.country = data.pais;
-      city.population = data.poblacion;
+      city.nombre = data.nombre;
+      city.pais = data.pais;
+      city.poblacion = data.poblacion;
       city.softDelete = data.softDelete;
-      city.dateRegister = data.fechaRegistro;
+      city.fechaRegistro = data.fechaRegistro;
       console.log('Ciudad obtenida correctamente');
 
     } catch (error) {

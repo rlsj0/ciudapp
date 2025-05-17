@@ -18,12 +18,12 @@ function goReviews(id: number) {
 
 <template>
     <v-card class="mx-auto" v-on:click="goReviews(props.city.id)">
-        <v-card-title>{{ props.city.name }}</v-card-title>
-        <v-card-subtitle class="pt-4">{{ props.city.country }}</v-card-subtitle>
+        <v-card-title>{{ props.city.nombre }}</v-card-title>
+        <v-card-subtitle class="pt-4">{{ props.city.pais }}</v-card-subtitle>
 
         <div class="card-info pa-4">
-            <span class="text-left">{{ props.city.population }}</span>
-            <span class="text-right">{{ props.city.dateRegister }}</span>
+            <span class="text-left">{{ props.city.poblacion }}</span>
+            <span class="text-right">{{ props.city.fechaRegistro }}</span>
         </div>
     </v-card>
 </template>

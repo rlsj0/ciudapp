@@ -20,11 +20,11 @@ export const useCitiesStore = defineStore('cities', () => {
         //Cambie el mapeo de ingles a español
         const citiesInfo = data.map((c: any) => ({
           id: c.id,
-          name: c.nombre,
-          country: c.pais,
-          population: c.poblacion,
+          nombre: c.nombre,
+          pais: c.pais,
+          poblacion: c.poblacion,
           softDelete: c.softDelete,
-          dateRegister: c.fechaRegistro
+          fechaRegistro: c.fechaRegistro
         }))
 
         cities.push(...citiesInfo);
