@@ -15,11 +15,12 @@ export const useResenasStore = defineStore('resenas', () => {
     dateRegister: new Date()
   })
   const isLoaded = ref(false)
+  const url = `${window.location.protocol}//${window.location.hostname}`
 
   async function fetchAll(id: number) {
 
     try {
-      const response = await fetch('http://localhost:8080/Ciudad/' + id + '/Resena');
+      const response = await fetch(`${url}:8080/Ciudad/` + id + '/Resena');
       const data = await response.json();
 
       const resenasInfo = data.map((c: any) => ({
@@ -45,7 +46,7 @@ export const useResenasStore = defineStore('resenas', () => {
   async function addResena(resena: NewResena) {
 
     try {
-      const response = await fetch('http://localhost:8080/Resena', {
+      const response = await fetch(`${url}:8080/Resena`, {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(resena)
@@ -72,7 +73,7 @@ export const useResenasStore = defineStore('resenas', () => {
 
   async function deleteResena(id: number) {
     try {
-      const response = await fetch(`http://localhost:8080/Resena/${id}`, {
+      const response = await fetch(`${url}:8080/Resena/${id}`, {
         method: 'DELETE',
         headers: { "Content-type": "application/json;charset=UTF-8" },
       })
@@ -98,7 +99,7 @@ export const useResenasStore = defineStore('resenas', () => {
   async function fetchCity(id: number) {
 
     try {
-      const response = await fetch('http://localhost:8080/Ciudad/' + id);
+      const response = await fetch(`${url}:8080/Ciudad/` + id);
       const data = await response.json();
 
       console.log(data)

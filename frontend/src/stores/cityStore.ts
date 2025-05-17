@@ -6,18 +6,19 @@ export const useCitiesStore = defineStore('cities', () => {
 
   const cities = reactive(new Array<City>())
   const isLoaded = ref(false)
+  const url = `${window.location.protocol}//${window.location.hostname}`
 
 
   async function fetchAll() {
 
     if (cities.length === 0) {
       try {
-        const response = await fetch('http://localhost:8080/Ciudad');
+        const response = await fetch(`${url}:8080/Ciudad`);
         const data = await response.json();
 
 
         //Cambie el mapeo de ingles a español
-        const citiesInfo = data.map((c:any) => ({
+        const citiesInfo = data.map((c: any) => ({
           id: c.id,
           name: c.nombre,
           country: c.pais,
@@ -40,7 +41,7 @@ export const useCitiesStore = defineStore('cities', () => {
   async function addCity(city: NewCity) {
 
     try {
-      const response = await fetch('http://localhost:8080/Ciudad', {
+      const response = await fetch(`${url}:8080/Ciudad`, {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(city)
@@ -67,7 +68,7 @@ export const useCitiesStore = defineStore('cities', () => {
 
   async function deleteCity(id: number) {
     try {
-      const response = await fetch(`http://localhost:8080/Ciudad/${id}`, {
+      const response = await fetch(`${url}:8080/Ciudad/${id}`, {
         method: 'DELETE',
         headers: { "Content-type": "application/json;charset=UTF-8" },
       })
