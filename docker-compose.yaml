@@ -34,15 +34,15 @@ services:
     networks:
       - backend
     build:
-      context: .
-      dockerfile: backend/CiudApp.API/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     depends_on:
       mariadb:
         condition: service_healthy
 
   frontend:
     ports:
-      - 3000:8080
+      - 80:8080
     networks:
       - backend
     build:
