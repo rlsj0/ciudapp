@@ -30,10 +30,10 @@ console.log('ReviewView.vue montado')
 </script>
 
 <template>
-    <v-container>
+    <v-container class="container">
         <div class="d-flex flex-column justify-center align-center">
         <h1 class="text-h4 text-md-h3 mb-6 mb-md-10 text-center mt-3 mt-md-10">{{ city?.nombre }}</h1>
-        <v-btn class="elevation-4 rounded-xl mt-6 banner__button"
+        <v-btn class="elevation-4 rounded-xl mt-6 container__button"
         :to="{ name: 'Registro', params: { tipo: 'resena' } }"
         >{{ t("addResena") }}</v-btn>
      </div>
@@ -47,5 +47,12 @@ console.log('ReviewView.vue montado')
     h1 {
         color: $color-primary;
         font-weight: $font-title-weight-bold;
+    }
+
+    .container {
+
+        &__button {
+            @include button-styles;
+        }
     }
 </style>

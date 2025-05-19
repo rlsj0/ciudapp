@@ -1,0 +1,6 @@
+@import "./variables";
+
+@mixin button-styles {
+    color: $color-primary;
+    background-color: $color-bg;
+}
